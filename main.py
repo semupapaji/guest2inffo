@@ -37,7 +37,7 @@ async def get_info(
     password: str = Query(..., description="Account Password")
 ):
     # 1. Call JWT API
-    jwt_url = f"https://jwtguest.up.railway.app/semy?uid={uid}&password={password}"
+    jwt_url = f"https://guestjwt1.up.railway.app/semy?uid={uid}&password={password}"
     async with httpx.AsyncClient(timeout=10.0) as client:
         try:
             jwt_resp = await client.get(jwt_url)
