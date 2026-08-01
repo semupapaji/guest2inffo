@@ -62,7 +62,7 @@ async def get_info(
         raise HTTPException(status_code=400, detail="Could not extract account ID from JWT response")
 
     # 2. Call new Info API (updated endpoint)
-    info_url = f"https://ff-info.up.railway.app/info?uid={account_uid}"
+    info_url = f"https://guestinfo1.up.railway.app/info?uid={account_uid}"
     async with httpx.AsyncClient(timeout=10.0) as client:
         try:
             info_resp = await client.get(info_url)
